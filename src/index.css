@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap");
+
+body {
+  /* scroll-behavior: smooth; */
+}
+.card-shadow {
+  box-shadow: 0 3px 12px 0 rgba(87, 87, 87, 0.205);
+}
+
+.btn {
+  background: #1597e7;
+}
+
+.btn-2 {
+  position: relative;
+}
+.btn-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 6px;
+  border: 2.5px solid transparent;
+  background: #1597e7 border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.btn:hover {
+  background: #1597e7;
+}
+
+.gradient,
+.active {
+  background: #1597e7;
+}
+
+.active {
+  color: #fff;
+  /* padding: 1rem; */
+  border-radius: 4px;
+}
+
+@layer base {
+  body {
+    @apply font-primary text-lg leading-8 text-white;
+  }
+  .h2 {
+    @apply font-secondary text-[32px] mb-6 tracking-[10%] uppercase;
+  }
+  .h3 {
+    @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
+  }
+  .h4 {
+    @apply font-secondary font-semibold text-[20px] mb-6 uppercase;
+  }
+  .btn {
+    @apply rounded-md font-primary text-white font-medium;
+  }
+  .btn-2 {
+    @apply rounded-md font-primary text-cyan-700 font-medium;
+  }
+  .btn-3 {
+    @apply border-[1px] border-[#1597e7] rounded-sm font-primary text-cyan-700 font-medium;
+  }
+  .btn-sm {
+    @apply h-[48px] px-6 text-sm;
+  }
+  .btn-xs {
+    @apply h-[35px] px-5 text-sm;
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base;
+  }
+  .btn-link {
+    @apply text-base;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
+  }
+  .section {
+    @apply py-8 lg:min-h-screen flex items-center;
+  }
+}
